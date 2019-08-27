@@ -17,19 +17,13 @@ void setup() {
 }
 
 void zaman() {
- // This allows for the update of variables for time or accessing the individual elements.
  myRTC.updateTime();
-
-// Start printing elements as individuals
-
  Serial.print(" ");
  Serial.print(myRTC.hours);
  Serial.print(":");
  Serial.print(myRTC.minutes);
  Serial.print(":");
  Serial.println(myRTC.seconds);
-
-// Delay so the program doesn't print non-stop
 
 }
 
@@ -52,9 +46,7 @@ else
  Serial.print("Yağmur sensörünün analog değeri : ");
  Serial.println(analogDeger); 
  sonYagmurZamani = millis();}
- 
 
-// Start printing elements as individuals
 
 }
 
@@ -62,7 +54,6 @@ void sicaklikSensoru()//LM35 Sıcaklık Sensörü
 { 
   
    if (millis() - sonSicaklikZamani >= sicaklikAralik) {
-  // analogRead() fonksiyonu ile A0 pinindeki değeri okuyoruz.
  sensorDeger = analogRead(analogPinSicaklik);
  Serial.println("**************************************");
  zaman();
@@ -85,9 +76,7 @@ void sicaklikSensoru()//LM35 Sıcaklık Sensörü
 
 }
 
-
 void loop() {
-
   yagmurSensoru();
   sicaklikSensoru();
 }
